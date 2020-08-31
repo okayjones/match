@@ -1,0 +1,43 @@
+body {
+    background-color: #e4e2e0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.scoreboard {
+    text-align: center;
+    margin: 25px;
+}
+
+.gameboard {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    justify-content: space-around;
+    margin: auto 25%;
+}
+
+.card {
+    background-color: #fafaf9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    height: 100px;
+    text-align: center;
+    transition: all .5s;
+
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+h1 {
+    background-color: #fafaf9;
+    margin: 0 0 25px 0;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    text-align:center;
+}
