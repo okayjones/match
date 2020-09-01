@@ -15,7 +15,16 @@ function shuffleArray(array) {
     }
     return array;
 }
-let cardArray = shuffleArray(['a','b','a','b']);
+const camera = "<i class='fas fa-camera-retro' aria-hidden='true'></i>";
+const cat = "<i class='fas fa-cat' aria-hidden='true'></i>";
+const beer = "<i class='fas fa-beer' aria-hidden='true'></i>";
+const bed = "<i class='fas fa-bed' aria-hidden='true'></i>";
+
+let cardArray = shuffleArray(
+    [camera,camera,
+    cat, cat,
+    beer,beer,
+    bed,bed,]);
 
 // ------------------------------------------ //
 
@@ -29,10 +38,13 @@ card0.onclick = cardClick;
 card1.onclick = cardClick;
 card2.onclick = cardClick;
 card3.onclick = cardClick;
+card4.onclick = cardClick;
+card5.onclick = cardClick;
+card6.onclick = cardClick;
+card7.onclick = cardClick;
 reset.onclick = resetGame;
 
 function cardClick(event) {
-    console.log('timeoutid, '+timeoutId)
     if (timeoutId !=''){
         clearTimeout(timeoutId);
         resetFlippedCards(lastCardPlayed);
@@ -59,12 +71,30 @@ function cardClick(event) {
                     card3.innerHTML = cardArray[3];
                     cardsRevealed++;
                     break;
-            }
+                case "card4":
+                    card4.innerHTML = cardArray[4];
+                    cardsRevealed++;
+                    break;
+                case "card5":
+                    card5.innerHTML = cardArray[5];
+                    cardsRevealed++;
+                    break;
+                case "card6":
+                    card6.innerHTML = cardArray[6];
+                    cardsRevealed++;
+                    break;
+                case "card7":
+                    card7.innerHTML = cardArray[7];
+                    cardsRevealed++;
+                    break;
+                }
             if (cardsRevealed==1) {
                 cardCompare = card;
             }
             if (cardsRevealed==2 && isMatch(card)) {
                 card.style.backgroundColor= 'darkcyan';
+                card.style.color='#fafaf9';
+                cardCompare.style.color='#fafaf9';
                 cardCompare.style.backgroundColor='darkcyan';
                 cardCompare = '';
                 cardsRevealed = 0;
@@ -87,6 +117,7 @@ function resetFlippedCards(){
 }
 
 function printResults(card){
+    console.log(card.innerHTML);
     console.log(card.innerHTML);
     console.log('cards revealed '+ cardsRevealed);
     console.log('card to compare '+ cardCompare.id+
@@ -112,13 +143,18 @@ function resetGame(){
     clicks = 0;
     lastCardPlayed = '';
     timeoutId = '';
-    card0.innerHTML='';
-    card1.innerHTML='';
-    card2.innerHTML='';
-    card3.innerHTML='';
-    card0.style.backgroundColor='';
-    card1.style.backgroundColor='';
-    card2.style.backgroundColor='';
-    card3.style.backgroundColor='';
+    resetCard(card0);
+    resetCard(card1);
+    resetCard(card2);
+    resetCard(card3);
+    resetCard(card4);
+    resetCard(card5);
+    resetCard(card6);
+    resetCard(card7);
     score.innerHTML=clicks;
+}
+
+function resetCard(card) {
+    card.innerHTML='';
+    card.style.backgroundColor='';
 }
