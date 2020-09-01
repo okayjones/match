@@ -52,7 +52,6 @@ function cardClick(event) {
     let card = event.target;
     if (cardsRevealed!==2){
         if (!isPlayed(card)){
-            clicks++;
             lastCardPlayed=card;
             switch (card.id) {
                 case "card0":
@@ -98,10 +97,12 @@ function cardClick(event) {
                 cardCompare.style.backgroundColor='darkcyan';
                 cardCompare = '';
                 cardsRevealed = 0;
+                clicks++;
             }
             if (cardsRevealed==2 && !isMatch(card)) {
                 timeoutId = setTimeout(resetFlippedCards,1000);
-                console.log(timeoutId);
+                console.log(timeoutId)
+                clicks++;;
             } 
             score.innerHTML=clicks;
         }
@@ -152,9 +153,11 @@ function resetGame(){
     resetCard(card6);
     resetCard(card7);
     score.innerHTML=clicks;
+    shuffleArray(cardArray);
 }
 
 function resetCard(card) {
     card.innerHTML='';
     card.style.backgroundColor='';
+    card.style.color='';
 }
