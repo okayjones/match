@@ -83,7 +83,7 @@ function resetCards(){
     cardCompare.innerHTML='';
     cardCompare = '';
     cardsRevealed = 0;
-    timeoutId = 0;
+    timeoutId= '';
 }
 
 function printResults(card){
@@ -109,6 +109,10 @@ function isPlayed(card){
 
 function resetGame(){
     resetCards();
+    card0.innerHTML='';
+    card1.innerHTML='';
+    card2.innerHTML='';
+    card3.innerHTML='';
     clicks = 0;
     score.innerHTML = clicks; 
 }
