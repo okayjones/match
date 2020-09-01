@@ -1,4 +1,4 @@
-//Setup the board
+//----Setup the board------------------------- //
 card0 = document.getElementById('card0');
 card1 = document.getElementById('card1');
 card2 = document.getElementById('card2');
@@ -35,7 +35,7 @@ function cardClick(event) {
     console.log('timeoutid, '+timeoutId)
     if (timeoutId !=''){
         clearTimeout(timeoutId);
-        resetCards(lastCardPlayed);
+        resetFlippedCards(lastCardPlayed);
     }
     let card = event.target;
     if (cardsRevealed!==2){
@@ -69,21 +69,20 @@ function cardClick(event) {
                 cardsRevealed = 0;
             }
             if (cardsRevealed==2 && !isMatch(card)) {
-                timeoutId = setTimeout(resetCards,1000);
+                timeoutId = setTimeout(resetFlippedCards,1000);
                 console.log(timeoutId);
             } 
-            printResults(card);
-            score.innerHTML = clicks; 
+            score.innerHTML=clicks;
         }
     }
 }
 
-function resetCards(){
+function resetFlippedCards(){
     lastCardPlayed.innerHTML='';
     cardCompare.innerHTML='';
     cardCompare = '';
     cardsRevealed = 0;
-    timeoutId= '';
+    timeoutId = '';
 }
 
 function printResults(card){
@@ -106,13 +105,15 @@ function isPlayed(card){
     return !card.innerHTML =='';
 }
 
-
 function resetGame(){
-    resetCards();
+    cardsRevealed = 0;
+    cardCompare = '';
+    clicks = 0;
+    lastCardPlayed = '';
+    timeoutId = '';
     card0.innerHTML='';
     card1.innerHTML='';
     card2.innerHTML='';
     card3.innerHTML='';
-    clicks = 0;
-    score.innerHTML = clicks; 
+    score.innerHTML=clicks;
 }
