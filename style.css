@@ -31,10 +31,10 @@ body {
     font-size: 48px;
 }
 
-.card:hover {
+/* .card:hover {
     cursor: pointer;
     transform: scale(1.1);
-}
+} */
 
 h1 {
     background-color: gray;

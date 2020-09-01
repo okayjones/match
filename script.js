@@ -43,6 +43,37 @@ card5.onclick = cardClick;
 card6.onclick = cardClick;
 card7.onclick = cardClick;
 reset.onclick = resetGame;
+card0.onmouseover = cardHover;
+card0.onmouseout = cardHoverOff;
+card1.onmouseover = cardHover;
+card1.onmouseout = cardHoverOff;
+card2.onmouseover = cardHover;
+card2.onmouseout = cardHoverOff;
+card3.onmouseover = cardHover;
+card3.onmouseout = cardHoverOff;
+card4.onmouseover = cardHover;
+card4.onmouseout = cardHoverOff;
+card5.onmouseover = cardHover;
+card5.onmouseout = cardHoverOff;
+card6.onmouseover = cardHover;
+card6.onmouseout = cardHoverOff;
+card7.onmouseover = cardHover;
+card7.onmouseout = cardHoverOff;
+
+
+function cardHover(event) {
+    let card = event.target;
+    if (!isPlayed(card) && card.id !=''){
+    card.style.cursor = 'pointer';
+    card.style.transform ='scale(1.1)';
+    };
+}
+function cardHoverOff(event) {
+    let card = event.target; 
+    card.style.cursor = '';
+    card.style.transform ='';
+}
+
 
 function cardClick(event) {
     if (timeoutId !=''){
@@ -101,7 +132,6 @@ function cardClick(event) {
             }
             if (cardsRevealed==2 && !isMatch(card)) {
                 timeoutId = setTimeout(resetFlippedCards,1000);
-                console.log(timeoutId)
                 clicks++;;
             } 
             score.innerHTML=clicks;
