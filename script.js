@@ -116,5 +116,9 @@ function resetGame(){
     card1.innerHTML='';
     card2.innerHTML='';
     card3.innerHTML='';
+    card0.style.backgroundColor='';
+    card1.style.backgroundColor='';
+    card2.style.backgroundColor='';
+    card3.style.backgroundColor='';
     score.innerHTML=clicks;
 }
