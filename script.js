@@ -33,6 +33,7 @@ let cardCompare = '';
 let clicks = 0;
 let lastCardPlayed = '';
 let timeoutId = '';
+let matches = 0;
 
 card0.onclick = cardClick;
 card1.onclick = cardClick;
@@ -129,6 +130,12 @@ function cardClick(event) {
                 cardCompare = '';
                 cardsRevealed = 0;
                 clicks++;
+                matches++;
+                console.log(matches);
+                if (checkWin()){
+                    reset.innerHTML='You Win! Play Again?';
+                    reset.style.backgroundColor = 'orange';
+                }
             }
             if (cardsRevealed==2 && !isMatch(card)) {
                 timeoutId = setTimeout(resetFlippedCards,1000);
@@ -174,6 +181,7 @@ function resetGame(){
     clicks = 0;
     lastCardPlayed = '';
     timeoutId = '';
+    matches = 0;
     resetCard(card0);
     resetCard(card1);
     resetCard(card2);
@@ -184,10 +192,16 @@ function resetGame(){
     resetCard(card7);
     score.innerHTML=clicks;
     shuffleArray(cardArray);
+    reset.style.backgroundColor='';
+    reset.innerHTML='Reset';
 }
 
 function resetCard(card) {
     card.innerHTML='';
     card.style.backgroundColor='';
     card.style.color='darkgrey';
+}
+
+function checkWin(){
+    return matches == cardArray.length/2;
 }
