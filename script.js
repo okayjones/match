@@ -64,7 +64,8 @@ function cardClick(event) {
                 cardCompare = card;
             }
             if (cardsRevealed==2 && isMatch(card)) {
-
+                card.style.backgroundColor= 'darkcyan';
+                cardCompare.style.backgroundColor='darkcyan';
                 cardCompare = '';
                 cardsRevealed = 0;
             }
