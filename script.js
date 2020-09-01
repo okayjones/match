@@ -159,5 +159,5 @@ function resetGame(){
 function resetCard(card) {
     card.innerHTML='';
     card.style.backgroundColor='';
-    card.style.color='';
+    card.style.color='darkgrey';
 }
