@@ -1,10 +1,14 @@
 //----Setup the board------------------------- //
-card0 = document.getElementById('card0');
-card1 = document.getElementById('card1');
-card2 = document.getElementById('card2');
-card3 = document.getElementById('card3');
-score = document.getElementById('score');
-reset = document.getElementById('reset');
+let card0 = document.getElementById('card0');
+let card1 = document.getElementById('card1');
+let card2 = document.getElementById('card2');
+let card3 = document.getElementById('card3');
+let card4 = document.getElementById('card0');
+let card5 = document.getElementById('card1');
+let card6 = document.getElementById('card2');
+let card7 = document.getElementById('card3');
+let score = document.getElementById('score');
+let reset = document.getElementById('reset');
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -26,14 +30,14 @@ let cardArray = shuffleArray(
     beer,beer,
     bed,bed,]);
 
-// ------------------------------------------ //
 
 let cardsRevealed = 0;
 let cardCompare = '';
 let clicks = 0;
 let lastCardPlayed = '';
 let timeoutId = '';
-let matches = 0;
+let matches = 0;    
+// ------------------------------------------ //
 
 card0.onclick = cardClick;
 card1.onclick = cardClick;
@@ -74,7 +78,6 @@ function cardHoverOff(event) {
     card.style.cursor = '';
     card.style.transform ='';
 }
-
 
 function cardClick(event) {
     if (timeoutId !=''){
@@ -205,3 +208,13 @@ function resetCard(card) {
 function checkWin(){
     return matches == cardArray.length/2;
 }
+
+
+// card object:
+// isplayed (is face up)
+// value assignment(icon)
+// ismatched (has it been matched)
+
+//methods..
+//reset card (flip, clear)
+// play
