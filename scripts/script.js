@@ -5,10 +5,8 @@ const beer = "<i class='fas fa-beer' aria-hidden='true'></i>";
 const bed = "<i class='fas fa-bed' aria-hidden='true'></i>";
 const skull = "<i class='fas fa-skull-crossbones' aria-hidden='true'></i>";
 const leaf = "<i class='fas fa-leaf' aria-hidden='true'></i>";
-const gem ="<i class='far fa-gem' aria-hidden='true'></i>";
-const money = "<i class='far fa-money-bill-alt' aria-hidden='true'></i>";
 
-let cardValues =[camera,camera,cat,cat,beer,beer,bed,bed, skull, skull, leaf, leaf, gem, gem, money, money];
+let cardValues =[camera,camera,cat,cat,beer,beer,bed,bed, skull, skull, leaf, leaf];
 
 const modal = document.getElementById('winModal');
 const reset = document.getElementById('reset');
