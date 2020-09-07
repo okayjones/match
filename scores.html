@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href ="./style.css" type="text/css" rel="stylesheet">
+    <link href ="./css/style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>High Scores</title>
 </head>
 <body>
     <header id="nav"></header>
-    <div>
-    </div>
-
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Score</th>
+                <th colspan="2">High Scores</th>
             </tr>
         </thead>
         <tbody id="leaderboard">
         </tbody>
     </table>
-
-    <script src='./scripts/nav.js' type='text/javascript'></script>
-    <script src='./scripts/scores.js' type='text/javascript'></script>
+    <div class="buttons">
+        <a href ="./index.html"><button>Home</button></a>
+    </div>
+    <script src='./js/nav.js' type='text/javascript'></script>
+    <script src='./js/scores.js' type='text/javascript'></script>
 </body>
 </html>
